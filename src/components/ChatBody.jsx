@@ -2,23 +2,21 @@ import React, { useRef } from "react";
 import autoAnimate from "@formkit/auto-animate";
 import { useEffect } from "react";
 
-
 const ChatBody = ({ chat }) => {
-  const aiStyle =
-    "bg-white bg-opacity-40 backdrop-blur-lg dropshadow-md mr-auto";
+  const aiStyle = "mr-auto ai-msg";
+  const normalStyle = "normal-msg";
+  const parent = useRef(null);
+  const bottomRef = useRef(null);
 
-    const parent = useRef(null);
-    const bottomRef = useRef(null);
+  // only for aut animations
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current);
+  }, [parent]);
 
-    // only for aut animations
-    useEffect(()=>{
-        parent.current && autoAnimate(parent.current);
-    }, [parent])
-
-    //for scrolling bottom
-    useEffect(()=>{
-        bottomRef.current?.scrollIntoView({behavior: "smooth"})
-    }, [chat])
+  //for scrolling bottom
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [chat]);
 
   return (
     <div className="flex flex-col gap-4" ref={parent}>
@@ -26,8 +24,8 @@ const ChatBody = ({ chat }) => {
         return (
           <div
             key={i}
-            className={`border-[#999999] break-words border-2 rounded-xl self-end px-3 py-3 max-w-[80%] ${
-              message.sender === "ai" && aiStyle
+            className={`break-words msg self-end px-2 py-1 max-w-[80%] ${
+              message.sender === "ai" ? aiStyle : normalStyle
             }`}
           >
             <pre className="whitespace-pre-wrap">

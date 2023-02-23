@@ -6,25 +6,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Eudoxus Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
   scroll-behavior: smooth;
 }
-
-.gradient-01 {
-  position: absolute;
-  width: 200px;
-  height: 238px;
-  top: 0;
-  background: #ca00ff;
-  filter: blur(175px);
+body{
+  font-size: 12px;
 }
 
-.gradient-02 {
-  position: absolute;
-  width: 200px;
-  height: 238px;
-  top: -6rem;
-  right: 0px;
-  background: #7aebfb;
-  filter: blur(190px)
+.ai-msg{
+  background: #f5f6f7;
+  color: #4f4f4f;
+}
+
+.normal-msg{
+  background: #0d6efd;
+  color: #fff;
+}
+
+.msg{
+  border-radius: .3rem;
 }

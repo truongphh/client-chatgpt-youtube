@@ -18,7 +18,8 @@ const ChatInput = ({ sendMessage, loading }) => {
         <img src="./loader.gif" className="w-8 m-auto" />
       ) : (
         <>
-          <textarea
+          <input
+          autoFocus={true}
             onKeyDown={(e) => {
               e.keyCode === 13 && e.shiftKey === false && handleSubmit();
             }}
