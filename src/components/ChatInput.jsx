@@ -20,6 +20,7 @@ const ChatInput = ({ sendMessage, loading }) => {
         <>
           <input
           autoFocus={true}
+          placeholder="Nhập yêu cầu hỗ trợ của bạn..."
             onKeyDown={(e) => {
               e.keyCode === 13 && e.shiftKey === false && handleSubmit();
             }}

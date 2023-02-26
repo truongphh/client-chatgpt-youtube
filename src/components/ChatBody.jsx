@@ -19,7 +19,7 @@ const ChatBody = ({ chat }) => {
   }, [chat]);
 
   return (
-    <div className="flex flex-col gap-4" ref={parent}>
+    <div className="flex flex-col gap-4 p-3" ref={parent}>
       {chat.map((message, i) => {
         return (
           <div
